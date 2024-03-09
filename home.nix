@@ -1,5 +1,17 @@
-{pkgs, lib, ...}: {
-
+{pkgs, lib, ...}: 
+let
+  nixvim = import (builtins.fetchGit {
+    url = "https://github.com/nix-community/nixvim";
+    # If you are not running an unstable channel of nixpkgs, select the corresponding branch of nixvim.
+    # ref = "nixos-23.05";
+  });
+in
+{
+    imports = [
+        # For home-manager
+        nixvim.homeManagerModules.nixvim
+    ];
+ 
     home.username = "dwlhm";
     home.homeDirectory = "/home/dwlhm";
     home.stateVersion = "24.05"; # To figure this out you can comment out the line and see what version it expected.
@@ -30,8 +42,15 @@
 	userEmail = "dwiilhamm026@gmail.com";
     };
 
-    imports = [
-        ./nixvim.nix
-    ];
+    programs.nixvim = {
+    enable = true;
+    colorschemes.catppuccin = {
+        enable = true;
+        flavour = "mocha";
+    };
+    plugins.lualine = {
+      enable = true;
+    };
+};
 
 }
