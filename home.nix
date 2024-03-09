@@ -24,4 +24,10 @@
 	};
     };
 
+    programs.git = {
+        enable = true;
+	userName = "dwlhm";
+	userEmail = "dwiilhamm026@gmail.com";
+    };
+
 }
