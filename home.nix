@@ -1,4 +1,9 @@
-{pkgs, ...}: {
+{pkgs, lib, ...}: {
+    imports = [
+        ./nvim.nix
+    ];
+
+
     home.username = "dwlhm";
     home.homeDirectory = "/home/dwlhm";
     home.stateVersion = "24.05"; # To figure this out you can comment out the line and see what version it expected.
@@ -6,7 +11,6 @@
     home.packages = [
         pkgs.nerdfonts
         pkgs.zoxide
-        pkgs.neovim
 	pkgs.lsd
 	pkgs.starship
     ];
