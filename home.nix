@@ -8,6 +8,7 @@
         pkgs.zoxide
         pkgs.neovim
 	pkgs.lsd
+	pkgs.starship
     ];
 
     programs.home-manager.enable = true;
@@ -16,6 +17,7 @@
         enable = true;
 	shellInit = ''
 	    ${pkgs.zoxide}/bin/zoxide init fish | source
+	    ${pkgs.starship}/bin/starship init fish | source
 	'';
 	shellAliases = {
 	    ls = "lsd";
