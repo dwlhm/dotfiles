@@ -1,8 +1,4 @@
 {pkgs, lib, ...}: {
-    imports = [
-        ./nvim.nix
-    ];
-
 
     home.username = "dwlhm";
     home.homeDirectory = "/home/dwlhm";
@@ -33,5 +29,15 @@
 	userName = "dwlhm";
 	userEmail = "dwiilhamm026@gmail.com";
     };
+
+    programs.nixvim = {
+        enable = true;
+	colorschemes.catppuccin = {
+	    enable = true;
+	    flavour = "mocha";
+	};
+	plugins.lualine = {
+	    enable = true;
+	};
 
 }
