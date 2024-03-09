@@ -30,14 +30,8 @@
 	userEmail = "dwiilhamm026@gmail.com";
     };
 
-    programs.nixvim = {
-        enable = true;
-	colorschemes.catppuccin = {
-	    enable = true;
-	    flavour = "mocha";
-	};
-	plugins.lualine = {
-	    enable = true;
-	};
+    imports = [
+        ./nixvim.nix
+    ];
 
 }
