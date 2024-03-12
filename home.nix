@@ -40,6 +40,7 @@
 	  catppuccin-nvim
 	  lualine-nvim
 		nvim-tree-lua
+		nvim-web-devicons
 	];
 	extraLuaConfig = lib.fileContents ./configs/nvim/init.lua;
     };
