@@ -6,3 +6,5 @@ vim.cmd('colorscheme catppuccin')
 vim.g.flavour = 'mocha'
 
 require('lualine').setup()
+
+require('nvim-tree-lua').setup()
