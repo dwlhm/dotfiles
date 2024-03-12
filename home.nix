@@ -39,6 +39,7 @@
         plugins = with pkgs.vimPlugins; [
 	  catppuccin-nvim
 	  lualine-nvim
+		nvim-tree-lua
 	];
 	extraLuaConfig = lib.fileContents ./configs/nvim/init.lua;
     };
