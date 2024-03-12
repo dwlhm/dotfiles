@@ -38,6 +38,7 @@
         vimdiffAlias = true;
         plugins = with pkgs.vimPlugins; [
 	  catppuccin-nvim
+	  lualine-nvim
 	];
 	extraLuaConfig = lib.fileContents ./configs/nvim/init.lua;
     };
