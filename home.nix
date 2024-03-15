@@ -41,6 +41,9 @@
 	  lualine-nvim
 		nvim-tree-lua
 		nvim-web-devicons
+		mason-nvim
+		mason-lspconfig-nvim
+		nvim-lspconfig
 	];
 	extraLuaConfig = lib.fileContents ./configs/nvim/init.lua;
     };
