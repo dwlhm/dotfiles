@@ -23,5 +23,3 @@ require("mason-lspconfig").setup({
 		"tsserver",
 	}
 })
-
-

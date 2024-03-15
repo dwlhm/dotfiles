@@ -44,6 +44,10 @@
 		mason-nvim
 		mason-lspconfig-nvim
 		nvim-lspconfig
+		cmp-nvim-lsp
+		cmp-buffer
+		cmp-path
+		cmp-nvim-lsp-signature-help
 	];
 	extraLuaConfig = lib.fileContents ./configs/nvim/init.lua;
     };
