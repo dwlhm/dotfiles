@@ -141,3 +141,16 @@ map("n", "<leader>ff", telescope.find_files, {})
 map("n", "<leader>fg", telescope.live_grep, {})
 map("n", "<leader>fb", telescope.buffers, {})
 map("n", "<leader>fh", telescope.help_tags, {})
+
+-- telescope-ui-select 
+-- This is your opts table
+require("telescope").setup {
+  extensions = {
+    ["ui-select"] = {
+      require("telescope.themes").get_dropdown {
+      }
+
+    }
+  }
+}
+require("telescope").load_extension("ui-select")
