@@ -32,7 +32,7 @@ map('n', '[d', vim.diagnostic.goto_prev, opts)
 map('n', ']d', vim.diagnostic.goto_next, opts)
 map('n', '<space>q', vim.diagnostic.setloclist, opts)
 
-local on_attach = function(_client, bufnr)
+local on_attach = function(_, bufnr)
 	-- Enable completion triggered by <c-x><c-o>
 	vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
@@ -77,7 +77,7 @@ vim.api.nvim_set_keymap("i", "<C-p>", "<Plug>luasnip-prev-choice", {})
 
 vim.api.nvim_set_keymap("s", "<C-p>", "<Plug>luasnip-prev-choice", {})
 local has_words_before = function()
-  local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+  local line, col = table.unpack(vim.api.nvim_win_get_cursor(0))
   return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
 end
 
@@ -136,7 +136,7 @@ cmp.setup {
 
 -- Telescope
 local telescope = require("telescope.builtin")
-map("n", "<leader>ff", telescope.find_files, {})
+map("n", "<C-f>", telescope.find_files, {})
 map("n", "<leader>fg", telescope.live_grep, {})
 map("n", "<leader>fb", telescope.buffers, {})
 map("n", "<leader>fh", telescope.help_tags, {})
