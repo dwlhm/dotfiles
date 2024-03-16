@@ -69,9 +69,27 @@ require("mason-lspconfig").setup_handlers {
 	-- dedicated handler start here
 }
 
+-- Luasnip ---------------------------------------------------------------------
+local luasnip = require("luasnip")
+require("luasnip.loaders.from_lua").lazy_load()
+vim.api.nvim_set_keymap("i", "<C-n>", "<Plug>luasnip-next-choice", {})
+vim.api.nvim_set_keymap("s", "<C-n>", "<Plug>luasnip-next-choice", {})
+vim.api.nvim_set_keymap("i", "<C-p>", "<Plug>luasnip-prev-choice", {})
+
+vim.api.nvim_set_keymap("s", "<C-p>", "<Plug>luasnip-prev-choice", {})
+local has_words_before = function()
+  local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+  return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
+end
+
 -- CMP - Autocompletion
 local cmp = require "cmp"
 cmp.setup {
+	snippet = {
+    expand = function(args)
+       require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+    end,
+  },
 	mapping = {
 		['<C-p>'] = cmp.mapping.select_prev_item(),
 		['<C-n>'] = cmp.mapping.select_next_item(),

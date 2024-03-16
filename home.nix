@@ -45,6 +45,7 @@
 		mason-nvim
 		mason-lspconfig-nvim
 		nvim-lspconfig
+		luasnip
 		cmp-nvim-lsp
 		cmp-buffer
 		cmp-path
