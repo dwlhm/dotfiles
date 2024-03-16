@@ -48,6 +48,8 @@
 		cmp-buffer
 		cmp-path
 		cmp-nvim-lsp-signature-help
+		plenary-nvim
+		telescope-nvim
 	];
 	extraLuaConfig = lib.fileContents ./configs/nvim/init.lua;
     };
