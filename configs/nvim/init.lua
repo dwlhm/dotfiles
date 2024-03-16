@@ -165,3 +165,27 @@ require("telescope").setup {
   }
 }
 require("telescope").load_extension("ui-select")
+
+-- terminal
+map("t", "<C-x>", "<C-\\><C-N>", { desc = "Terminal Escape terminal mode" })
+
+-- nvterm 
+require("nvterm").setup()
+map({ "n", "t" }, "<A-v>", function()
+  require("nvterm.terminal").toggle("vertical")
+end, { desc = "Terminal Toggleable vertical term" })
+
+map({ "n", "t" }, "<A-h>", function()
+  require("nvterm.terminal").toggle("horizontal")
+end, { desc = "Terminal New horizontal term" })
+
+
+map({ "n", "t" }, "<A-i>", function()
+  require("nvterm.terminal").toggle("float")
+end, { desc = "Terminal Toggle Floating term" })
+
+
+map("t", "<ESC>", function()
+  local win = vim.api.nvim_get_current_win()
+  vim.api.nvim_win_close(win, true)
+end, { desc = "Terminal Close term in terminal mode" })

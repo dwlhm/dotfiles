@@ -53,6 +53,7 @@
 		plenary-nvim
 		telescope-nvim
 		telescope-ui-select-nvim
+		nvterm
 	];
 	extraLuaConfig = lib.fileContents ./configs/nvim/init.lua;
     };
