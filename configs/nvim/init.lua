@@ -11,6 +11,18 @@ require('nvim-tree').setup()
 
 local map = vim.keymap.set
 
+-- keymap for using hjkl in insert mode (from nvChad configuration)
+map("i", "<C-b>", "<ESC>^i", { desc = "Move Beginning of line" })
+map("i", "<C-e>", "<End>", { desc = "Move End of line" })
+map("i", "<C-h>", "<Left>", { desc = "Move Left" })
+map("i", "<C-l>", "<Right>", { desc = "Move Right" })
+map("i", "<C-j>", "<Down>", { desc = "Move Down" })
+map("i", "<C-k>", "<Up>", { desc = "Move Up" })
+
+-- split window
+map("n", "<leader>v", "<cmd>vs<CR>", { desc = "Split window vertically" })
+map("n", "<leader>h", "<cmd>sp<CR>", { desc = "Split window horizontally" })
+
 -- nvimtree
 map("n", "<C-n>", "<cmd>NvimTreeToggle<CR>", { desc = "Nvimtree Toggle window" })
 map("n", "<leader>e", "<cmd>NvimTreeFocus<CR>", { desc = "Nvimtree Focus window" })
