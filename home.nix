@@ -26,35 +26,36 @@
     };
 
     programs.git = {
-        enable = true;
-	userName = "dwlhm";
-	userEmail = "dwiilhamm026@gmail.com";
+    	enable = true;
+			userName = "dwlhm";
+			userEmail = "dwiilhamm026@gmail.com";
     };
 
     programs.neovim = {
-        enable = true;
-        defaultEditor = true;
-        viAlias = true;
-        vimAlias = true;
-        vimdiffAlias = true;
-        plugins = with pkgs.vimPlugins; [
-	  catppuccin-nvim
-	  lualine-nvim
-		nvim-tree-lua
-		nvim-web-devicons
-		mason-nvim
-		mason-lspconfig-nvim
-		nvim-lspconfig
-		luasnip
-		cmp-nvim-lsp
-		cmp-buffer
-		cmp-path
-		cmp-nvim-lsp-signature-help
-		plenary-nvim
-		telescope-nvim
-		telescope-ui-select-nvim
-		nvterm
-	];
+    	enable = true;
+      defaultEditor = true;
+      viAlias = true;
+      vimAlias = true;
+      vimdiffAlias = true;
+      plugins = with pkgs.vimPlugins; [
+	  		catppuccin-nvim
+	  		lualine-nvim
+				nvim-tree-lua
+				nvim-web-devicons
+				mason-nvim
+				mason-lspconfig-nvim
+				nvim-lspconfig
+				luasnip
+				cmp-nvim-lsp
+				cmp-buffer
+				cmp-path
+				cmp-nvim-lsp-signature-help
+				plenary-nvim
+				telescope-nvim
+				telescope-ui-select-nvim
+				nvterm
+				dashboard-nvim
+			];
 	extraLuaConfig = lib.fileContents ./configs/nvim/init.lua;
     };
 
