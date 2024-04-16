@@ -10,6 +10,7 @@
 	   pkgs.lsd
 	   pkgs.starship
 		 pkgs.ripgrep
+		 pkgs.unzip
     ];
 
     programs.home-manager.enable = true;

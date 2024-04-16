@@ -36,8 +36,9 @@ require("mason").setup()
 require("mason-lspconfig").setup({
 	ensure_installed = {
 		"lua_ls",
-		"tsserver",
-	}
+		"biome", -- alternative to tsserver yang error disini
+	},
+	automatic_installation = true
 })
 
 local opts = { noremap = true, silent = true }
