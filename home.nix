@@ -16,14 +16,16 @@
     programs.home-manager.enable = true;
 
     programs.fish = {
-        enable = true;
-	shellInit = ''
-	    ${pkgs.zoxide}/bin/zoxide init fish | source
-	    ${pkgs.starship}/bin/starship init fish | source
-	'';
-	shellAliases = {
-	    ls = "lsd";
-	};
+    	enable = true;
+			shellInit = ''
+	    	${pkgs.zoxide}/bin/zoxide init fish | source
+	    	${pkgs.starship}/bin/starship init fish | source
+			'';
+			shellAliases = {
+	    	ls = "lsd";
+				cd = "z";
+				":q" = "exit";
+			};
     };
 
     programs.git = {
@@ -57,7 +59,24 @@
 				nvterm
 				dashboard-nvim
 			];
-	extraLuaConfig = lib.fileContents ./configs/nvim/init.lua;
+			extraLuaConfig = lib.fileContents ./configs/nvim/init.lua;
     };
+
+		programs.tmux = {
+			enable = true;
+			shell = "${pkgs.fish}/bin/fish";
+			terminal = "tmux-256color";
+			historyLimit = 10000;
+			sensibleOnTop = true;
+			mouse = true;
+			prefix = "C-a";
+			plugins = with pkgs.tmuxPlugins; [
+				catppuccin
+			];
+			extraConfig = ''
+set -ag terminal-overrides ",xterm-256color:RGB"
+			'';
+		};
+
 
 }
