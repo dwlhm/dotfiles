@@ -3,10 +3,10 @@
 
     inputs = {
         # Using the latest stable release of nixpkgs for stability.
-        nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-24.05";
+        nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
 
         # Unstable only for experimental things
-        unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+        unstable.url = "github:nixos/nixpkgs/nixos-unstable";
         
         # settings home-manager
         home-manager = {
