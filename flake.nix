@@ -2,7 +2,13 @@
     description = "My Home Manager Flake";
 
     inputs = {
-        nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+        # Using the latest stable release of nixpkgs for stability.
+        nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-24.05";
+
+        # Unstable only for experimental things
+        unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+        
+        # settings home-manager
         home-manager = {
             url = "github:nix-community/home-manager";
             inputs.nixpkgs.follows = "nixpkgs";
